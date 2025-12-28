@@ -10,9 +10,11 @@ const App = () => {
   setUserdata(res.data)
   console.log(res.data);
 }
-useEffect(function(){
- getdata()
-},[index])
+useEffect(() =>{
+
+   getdata()
+
+},[index],[getdata])
 let printUserdata=<h3 className="text-gray-400 text-xs absolute top-1/2 left-1/2 -translate-x-1/2  -translate-x-1/2">Loding...</h3>
 if(userdata.length>0){
 printUserdata = userdata.map(function(elem,idx){
