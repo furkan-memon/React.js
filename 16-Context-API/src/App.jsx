@@ -6,6 +6,7 @@ const App = () => {
   
   return (
     <div>
+      <h1 className ='uppercase'>To Do List</h1>
       <Navbar />
      </div>
   )
