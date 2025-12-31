@@ -1,0 +1,16 @@
+@import "tailwindcss";
+#scrol::-webkit-scrollbar{
+    display: none
+}
+h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    text-decoration: underline;
+}
+body{
+    background-color: black;
+    color: white;
+}
