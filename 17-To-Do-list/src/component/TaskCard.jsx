@@ -1,49 +1,41 @@
-import React, { useState } from 'react'
-import { EllipsisVertical ,Pen,Trash2} from 'lucide-react'
+import { useState } from 'react'
+import { EllipsisVertical, Pen, Trash2 } from 'lucide-react'
 
-const TaskCard = ( props) => {
-  //  Task, Priority,id, Date,idx,onedit,ondelete
+const TaskCard = ({ id, text, priority, date, onEdit, onDelete }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div  className="relative bg-white rounded-2xl w-50 py-3 px-4 flex flex-col gap-5">
-      
+    <div className="relative w-56 bg-white text-black p-4 rounded-xl shadow-md">
+
       <div className="flex justify-between items-center">
-        <span className="border-s-4 border-black px-3 py-2 rounded font-semibold bg-slate-200">
-          {props.Priority}
+        <span className="px-3 py-1 bg-slate-200 rounded-full text-sm font-semibold">
+          {priority}
         </span>
 
-        
         <button onClick={() => setOpen(!open)}>
-          <EllipsisVertical />
+          <EllipsisVertical size={18} />
         </button>
       </div>
 
-
       {open && (
-        <div className="absolute top-12 right-4 flex  bg-white border rounded-lg shadow-md w-28 z-10">
-          <button onClick={()=>{
-            props.onedit(props.id)
-          console.log(props.id);
-          }} className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded-lg">
-            <Pen />
+        <div className="absolute right-2 top-10 bg-white border rounded shadow">
+          <button
+            onClick={() => onEdit(id)}
+            className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 w-full"
+          >
+            <Pen size={14} /> Edit
           </button>
           <button
-          onClick={(id)=>{
-            
-           props.ondelete(props.id)
-          }} className="block w-full text-left px-3 py-2 hover:bg-gray-100 rounded-lg">
-            <Trash2 />
+            onClick={() => onDelete(id)}
+            className="flex items-center gap-2 px-4 py-2 hover:bg-red-50 text-red-600 w-full"
+          >
+            <Trash2 size={14} /> Delete
           </button>
         </div>
       )}
 
-      <div>
-        <p>{props.Task}</p>
-        <span className="text-[10px] flex justify-end">
-          {props.Date}
-        </span>
-      </div>
+      <p className="mt-4 font-medium">{text}</p>
+      <span className="text-xs text-gray-500">{date}</span>
     </div>
   )
 }

@@ -1,12 +1,10 @@
-import React from 'react'
-
-const SearchBox = (props) => {
-  return (
-    <div>
-        <input onChange={(e)=>
-   props.setsearch(e.target.value)}  value={props.search} className='border-1 py-1 px-3 border-white text-white  rounded ' type="text" placeholder ='Search Task' />
-    </div>
-  )
-}
+const SearchBox = ({ search, setSearch }) => (
+  <input
+    value={search}
+    onChange={e => setSearch(e.target.value)}
+    placeholder="Search task..."
+    className="w-72 border border-slate-600 rounded-lg px-4 py-2 bg-transparent text-white"
+  />
+)
 
 export default SearchBox

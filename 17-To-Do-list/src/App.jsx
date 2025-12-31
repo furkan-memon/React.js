@@ -1,19 +1,23 @@
-import React from 'react'
-import Main from './component/Main'
-import { Routes,Route} from 'react-router-dom'
-import Addtask from './component/Addtask'
+import Main from './pages/Main'
 
 const App = () => {
   return (
-    <div className='flex items-center justify-center flex-col '>
-      <h1 className ='uppercase font-bold text-5xl text-white'>To Do List</h1>
-      
-      
-      
-       
+    <div className="min-h-screen bg-slate-950 text-white">
+
+      {/* Header */}
+      <header className="border-b border-white/10 bg-slate-900">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <h1 className="text-3xl font-bold tracking-wide">
+            To Do Dashboard
+          </h1>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-6xl mx-auto px-6 py-8">
         <Main />
-                  
-              
+      </main>
+
     </div>
   )
 }

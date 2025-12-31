@@ -1,51 +1,65 @@
-import React from 'react'
-import { useState } from 'react'
-import Taskinp from './Taskinp'
-import Priority from './Priority'
+import TaskInput from './TaskInput'
+import PrioritySelect from './PrioritySelect'
 import DateInput from './DateInput'
-import Addtaskbtn from './Addtaskbtn'
-const Addtask = (props) => {
+import AddTaskButton from './AddTaskButton'
 
-  const submitform = (e) => {
+const AddTask = ({
+  tasks,
+  setTasks,
+  taskText,
+  setTaskText,
+  priority,
+  setPriority,
+  date,
+  setDate,
+  editId,
+  setEditId
+}) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault()
-   
-    if (props.Task == '' || props.Priorityse == '' || props.date == '') {
-      alert('fill the input')
+    if (!taskText || !priority || !date) return alert('Fill all fields')
+
+    if (editId) {
+      setTasks(prev =>
+        prev.map(t =>
+          t.id === editId
+            ? { ...t, text: taskText, priority, date }
+            : t
+        )
+      )
+      setEditId(null)
     } else {
-      props.setSavedTask(prev => [
+      setTasks(prev => [
         ...prev,
         {
           id: Date.now(),
-          Task: props.Task,
-          Priority: props.Priorityse,
-          Date: props.date
+          text: taskText,
+          priority,
+          date
         }
-
       ])
-
-      props.setPriorityse('')
-      props.setTask('')
-      props.setDate('')
     }
-    
+
+    setTaskText('')
+    setPriority('')
+    setDate('')
   }
 
-
-
-  
-
-
   return (
-    <div className='rounded text-white flex flex-col border-2 border-white py-5 px-5'>
-      <form onSubmit={submitform} className='flex flex-col justify-between gap-4'>
+    <div className="bg-slate-900 rounded-2xl border border-slate-700 p-6">
+      <h2 className="text-xl font-bold mb-4">
+        {editId ? 'Edit Task' : 'Add Task'}
+      </h2>
 
-        <Taskinp Task={props.Task} setTask={props.setTask} />
-        <Priority Priority={props.Priorityse} setPriority={props.setPriorityse} />
-        <DateInput date={props.date} setDate={props.setDate} />
-        <Addtaskbtn />
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <TaskInput value={taskText} setValue={setTaskText} />
+        <PrioritySelect value={priority} setValue={setPriority} />
+        <DateInput value={date} setValue={setDate} />
+        <AddTaskButton editId={editId} />
       </form>
     </div>
   )
 }
 
-export default Addtask
+export default AddTask
