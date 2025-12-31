@@ -1,11 +1,13 @@
 import React from 'react'
 
-const DateInput = (props) => {
+const DateInput = ({date,setDate}) => {
+  
+
+  
   return (
     <div >
-        <input className ="border-2 w-full border-white py-2 px-2 rounded" onChange={(e)=>
-  props.setDate(e.target.value)
-        } type="date" value={props.date}  placeholder='What is your Task'/>
+        <input  className ="border-2 w-full border-white py-2 px-2 rounded" value={date ?? ""}  onChange={e=> setDate(e.target.value)
+        } type="date" />
     </div>
   )
 }
