@@ -7,8 +7,8 @@ const Priority = (props) => {
   return (
     <div>
       <select  onChange = {(e)=>{
-        props.setPriorityse(e.target.value)
-      }}  defaultValue="Prioritys" value={props.Priorityes} className='block bg-white text-black w-full border-gray-200 rounded-lg py-3 pl-3 pr-'>
+        props.setPrioritys(e.target.value)
+      }}  defaultValue="Prioritys" value={props.Prioritys} className='block bg-white text-black w-full border-gray-200 rounded-lg py-3 pl-3 pr-'>
              
             <option  disabled value="Prioritys">Prioritys</option>
             <option value="Top Priority">Top Priority</option>
