@@ -13,6 +13,8 @@ function OldProducts() {
   }, []);
 
   return (
+    <>
+        
     <div className="grid">
       {products.map(p => (
         <div className="card old" key={p.id}>
@@ -23,6 +25,7 @@ function OldProducts() {
         </div>
       ))}
     </div>
+    </>
   );
 }
 

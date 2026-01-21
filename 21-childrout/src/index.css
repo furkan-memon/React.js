@@ -54,7 +54,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
-
+.option-dropdown select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 /* Cards */
 .card {
   background: #fff;
@@ -62,6 +68,8 @@ body {
   padding: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+
 }
 
 .card:hover {
@@ -70,10 +78,12 @@ body {
 }
 
 .card img {
-  height: 150px;
-  object-fit: contain;
+  height: 100px;
+  object-fit: cover;
   display: block;
   margin: 0 auto 10px;
+  overflow: hidden;
+
 }
 
 .card h3 {
