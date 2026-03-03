@@ -40,7 +40,6 @@ const Main = () => {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-10 flex gap-8">
 
-      {/* FORM */}
       <div className="w-1/3">
         <AddTask
           tasks={tasks}
@@ -56,7 +55,6 @@ const Main = () => {
         />
       </div>
 
-      {/* LIST */}
       <div className="w-2/3 space-y-6">
         <SearchBox search={search} setSearch={setSearch} />
 
