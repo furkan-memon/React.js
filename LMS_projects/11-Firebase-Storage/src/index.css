@@ -1,0 +1,11 @@
+input[type="file"] {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  background: teal;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
