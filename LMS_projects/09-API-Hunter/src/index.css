@@ -1,230 +1,66 @@
-/* ===== Global ===== */
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #e2e8f0;
+  font-family: 'Poppins', sans-serif;
+  background: #065f5b;
 }
 
-/* ===== App ===== */
-.app {
-  padding: 24px;
-  max-width: 1200px;
+/* Container */
+.container {
+  max-width: 1000px;
   margin: auto;
+  padding: 20px;
 }
 
-/* ===== Header ===== */
+/* Header */
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 16px 20px;
-  border-radius: 14px;
+  text-align: center;
+  color: white;
   margin-bottom: 20px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.header h1 {
-  font-size: 20px;
-  margin: 0;
-}
-
-/* Cart badge */
-.cart-badge {
-  background: linear-gradient(135deg, #22c55e, #14b8a6);
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.cart-badge:hover {
-  transform: scale(1.05);
-}
-
-/* ===== Controls ===== */
-.controls {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-  padding: 12px;
-
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-}
-
-.controls input,
-.controls select {
-  flex: 1;
+/* Search */
+.search {
+  width: 100%;
   padding: 12px;
   border-radius: 8px;
   border: none;
   outline: none;
-  font-size: 14px;
-  background: #0f172a;
-  color: white;
-}
-
-/* ===== Grid ===== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-}
-
-/* ===== Card ===== */
-.card {
-  background: #1e293b;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: 0.3s;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-/* Image */
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* Content */
-.card-content {
-  padding: 14px;
-}
-
-.card h3 {
-  margin: 0;
-  font-size: 15px;
-}
-
-.category {
-  font-size: 12px;
-  color: #94a3b8;
-}
-
-.price {
-  color: #22c55e;
-  font-weight: bold;
-  font-size: 17px;
-}
-
-.rating {
-  color: #facc15;
-  font-size: 13px;
-}
-
-/* Button */
-button {
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  background: #22c55e;
-  color: #022c22;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #16a34a;
-}
-
-/* ===== Overlay ===== */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: 30;
-}
-
-/* ===== Cart Drawer ===== */
-.cart {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 340px;
-  height: 100vh;
-  background: #020617;
-  padding: 20px;
-  transition: 0.4s ease;
-  z-index: 40;
-  display: flex;
-  flex-direction: column;
-}
-
-.cart.open {
-  right: 0;
-}
-
-/* Header */
-.cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 20px;
 }
 
-.cart-header h2 {
-  margin: 0;
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 
-/* Close */
-.close-btn {
-  background: none;
+/* Card */
+.card {
+  background: white;
+  color: #065f5b;
+  padding: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Button */
+.card button {
+  margin-top: 10px;
+  background: #065f5b;
+  color: white;
   border: none;
-  color: #fff;
-  font-size: 18px;
+  padding: 8px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-/* Cart items */
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  background: #0f172a;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-/* Remove btn */
-.cart-item button {
-  width: auto;
-  background: #ef4444;
-  color: white;
-  padding: 4px 8px;
-}
-
-/* Total */
-.total {
-  margin-top: auto;
-  font-size: 18px;
-  font-weight: bold;
-  border-top: 1px solid #1e293b;
-  padding-top: 12px;
-}
-
-/* Empty */
-.empty,
-.no-data {
+/* Loader */
+.loader {
   text-align: center;
-  opacity: 0.7;
-  margin-top: 20px;
+  color: white;
 }

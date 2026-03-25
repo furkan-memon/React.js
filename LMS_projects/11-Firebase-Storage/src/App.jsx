@@ -1,11 +1,6 @@
-import UploadImage from "./UploadImage";
+// src/App.jsx
+import Home from "./pages/Home";
 
-function App() {
-  return (
-    <div>
-      <h1>Firebase Image Upload</h1>
-      <UploadImage />
-    </div>
-  );
+export default function App() {
+  return <Home />;
 }
-export default App

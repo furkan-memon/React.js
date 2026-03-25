@@ -1,11 +1,59 @@
-input[type="file"] {
-  margin-bottom: 10px;
+body {
+  background: #065f5b;
+  color: white;
+  font-family: Arial;
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.upload {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  margin-right: 10px;
 }
 
 button {
-  padding: 8px 12px;
-  background: teal;
-  color: white;
+  background: white;
+  color: #065f5b;
   border: none;
+  padding: 10px 15px;
   cursor: pointer;
+  font-weight: bold;
+}
+
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+  color: #065f5b;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.loader {
+  margin-top: 20px;
 }

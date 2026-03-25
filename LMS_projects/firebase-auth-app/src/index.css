@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #065f5b;
+}
+
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+}
+
+.auth-card h2 {
+  color: #065f5b;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #065f5b;
+  border-radius: 8px;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #065f5b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.switch {
+  color: #065f5b;
+  cursor: pointer;
+  margin-top: 10px;
+}
